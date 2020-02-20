@@ -1,0 +1,18 @@
+<h1>Cocktails</h1>
+<div class="container">
+    <div class="text-right"><%= link_to 'Add new cocktail', new_cocktail_url %></div>
+    <div class="row">    
+        <% @cocktails.each do |cocktail| %>
+            <div class="list col-4 justify-content-around">
+                <div class="card-single">
+                    <%= link_to cocktail.name, cocktail_url(cocktail.id) %>
+                    <ul>
+                    <% cocktail.ingredients.each do |ingredient| %>
+                        <li><%= ingredient.name %></li>
+                    <% end %>
+                    </ul>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

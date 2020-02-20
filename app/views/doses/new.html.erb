@@ -1,0 +1,8 @@
+<h1>Add new dose for <%= @cocktail.name %></h1>
+<div class="container">
+    <%= simple_form_for ([@cocktail, @dose]) do |f| %>
+        <%= f.input :description, placeholder: "Description" %>
+        <%= f.input :ingredient, :collection => @ingredients %>
+        <%= f.submit value: "Enter cocktail!" %>
+    <% end %>
+</div>
