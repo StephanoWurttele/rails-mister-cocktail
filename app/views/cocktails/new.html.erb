@@ -2,6 +2,7 @@
 <div class="container">
     <%= simple_form_for @cocktail do |f| %>
         <%= f.input :name, placeholder: "Name" %>
+        <%= f.input :img_url, placeholder: "Enter image url" %>
         <%= f.submit value: "Enter cocktail!" %>
     <% end %>
 </div>

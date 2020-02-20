@@ -4,6 +4,7 @@
     <div class="row">    
         <% @cocktails.each do |cocktail| %>
             <div class="list col-4 justify-content-around">
+                <%= image_tag(cocktail.img_url, alt: "cocktail", class: "cocktail_thumbnail") %>
                 <div class="card-single">
                     <%= link_to cocktail.name, cocktail_url(cocktail.id) %>
                     <ul>

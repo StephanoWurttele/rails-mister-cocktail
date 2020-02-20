@@ -11,9 +11,9 @@ i2 = Ingredient.create(name: "ice")
 i3 = Ingredient.create(name: "mint leaves")
 
 
-c1 = Cocktail.create(name: "drink1")
-c2 = Cocktail.create(name: "drink2")
-c3 = Cocktail.create(name: "drink3")
+c1 = Cocktail.create!(name: "drink1", img_url: "https://www.thespruceeats.com/thmb/dZftD42S7eR9FIv-tcZ_P52BZdc=/1319x989/smart/filters:no_upscale()/paloma-cocktail-recipe-760852-5147_preview-5b0ec0bd8e1b6e003e9c35b7.jpeg")
+c2 = Cocktail.create!(name: "drink2", img_url: "https://images.absolutdrinks.com/drink-images/Raw/Absolut/3c26ac62-9c7f-45d5-85ed-c045c520c5d5.jpg?imwidth=500")
+c3 = Cocktail.create!(name: "drink3", img_url: "https://www.thespruceeats.com/thmb/gaok6I-ac9gzSM2JB7RUqd4V18A=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/popular-screwdriver-variations-759820-12-5b3f944ec9e77c003785d643.jpg")
 
 d1 = Dose.create!(description: "No idea 1", ingredient: i1, cocktail: c1)
 d2 = Dose.create!(description: "No idea 2", ingredient: i2, cocktail: c2)
