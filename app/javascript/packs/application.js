@@ -15,3 +15,23 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+if (document.querySelector(".cocktail-list")) {
+    document.querySelectorAll(".img-gradient").forEach ((image) => {
+        image.addEventListener('click', (event) => {
+            const drink = image.parentElement.querySelector(".cocktail_img").dataset
+            const drink_ingredients = JSON.parse(drink.ingredients);
+            console.log(drink_ingredients);
+            const ingr_name = document.querySelector(".cocktail-description h3");
+            const ingr_desc = document.querySelector(".cocktail-description p");
+            const ingr_list = document.querySelector(".cocktail-ingredients");
+            ingr_list.innerHTML = "";
+            ingr_name.innerHTML = drink.name;
+            ingr_desc.innerHTML = drink.desc;
+
+            drink_ingredients.forEach ((ingredient) => {
+                ingr_list.insertAdjacentHTML("beforeend", `<div class="cocktail-ingredient">${ingredient.name}</div>`)
+            });
+        });
+    });
+}

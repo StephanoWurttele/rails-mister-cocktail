@@ -1,4 +1,44 @@
-.cocktail_thumbnail{
-    width: auto;
-    height: 200px;
+.cocktail-container{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 40% auto; /* Center it */
+}
+
+.cocktail_img{
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.img-gradient{
+    position: absolute;
+    top: 0;
+    width: 300px;
+    height: 60%;
+    border-radius: 10px 10px 0 0;
+}
+
+.content {
+    position: absolute; /* Position the background text */
+    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    background: rgba(0, 0, 0, 0.2); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 300px; /* Full width */
+    padding: 20px 10%;
+    height: 40%;
+    border-radius: 0 0 10px 10px;
+}
+
+
+
+h5{
+    width: 180px;
+}
+
+p {
+    width: 180px;
+    padding: 0;
+    margin: 0;
 }

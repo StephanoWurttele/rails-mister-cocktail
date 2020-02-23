@@ -1,19 +1,68 @@
-<h1>Cocktails</h1>
-<div class="container">
-    <div class="text-right"><%= link_to 'Add new cocktail', new_cocktail_url %></div>
-    <div class="row">    
-        <% @cocktails.each do |cocktail| %>
-            <div class="list col-4 justify-content-around">
-                <%= image_tag(cocktail.img_url, alt: "cocktail", class: "cocktail_thumbnail") %>
-                <div class="card-single">
-                    <%= link_to cocktail.name, cocktail_url(cocktail.id) %>
-                    <ul>
-                    <% cocktail.ingredients.each do |ingredient| %>
-                        <li><%= ingredient.name %></li>
-                    <% end %>
-                    </ul>
+<div class="title text-center my-3"><h1>Cocktails</h1></div>
+<div class="d-flex main">
+    <div class="cocktails">
+
+
+
+    <div class="cocktails-add">
+        <i class="fas fa-plus-circle" style="color: #636062" data-toggle="modal" data-target="#exampleModal"></i>
+    </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add a drink</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <%= simple_form_for @cocktail do |f| %>
+                <%= f.input :name, placeholder: "Name" %>
+                <%= f.input :desc, placeholder: "Enter drink description" %>
+                <%= f.input :img_url, placeholder: "Enter image url" %>
+                <div class="modal-footer">
+                    <%= f.submit value: "Enter cocktail!", class: "btn btn-primary rounded" %>
+                </div>
+              </div>
+            <% end %>
+        </div>
+    </div>
+  </div>
+
+
+
+        <div class="cocktail-list">
+            <% @cocktails.each do |cocktail| %>
+                <div class="cocktail-container">
+                    <%= image_tag(cocktail.img_url, alt: "cocktail", class: "cocktail_img", data: {name: cocktail.name, desc: cocktail.desc, ingredients: cocktail.ingredients}) %>
+                    <div class="img-gradient"></div>
+                    <div class="content"> 
+                        <h5><%= cocktail.name %></h5>
+                        <p><%= cocktail.desc %><p>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="cocktail-description-bg flex-grow-1">
+            <div class="cocktail-description">
+                <h3>Drink name</h3>
+                <p>Desc</p>
+                <div class="cocktail-ingredients">
+                    <div class="cocktail-ingredient">
+                        Ingredient :)
+                    </div>
+                    <div class="cocktail-ingredient">
+                        Ingredient :)
+                    </div>
+                    <div class="cocktail-ingredient">
+                        Ingredient :)
+                    </div>
                 </div>
             </div>
-        <% end %>
     </div>
 </div>
+        

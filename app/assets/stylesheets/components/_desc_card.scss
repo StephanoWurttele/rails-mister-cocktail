@@ -1,0 +1,27 @@
+.cocktail-description-bg {
+    background-color:rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    color: white;
+}
+
+.cocktail-description{
+    margin: 10% 10% 10% 10%;
+    background: red($color: #000000);
+    height: 90%;
+}
+
+.cocktail-ingredients{
+    margin: 5%;
+    background-color: orchid;
+    height: 80%;
+}
+
+.cocktail-ingredient{
+    margin: 20px 0;
+    background-color: orange;
+    border-radius: 10%;
+    width: 90%;
+    padding: 5%;
+}

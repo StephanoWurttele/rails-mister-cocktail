@@ -1,1 +1,33 @@
 // Specific CSS for your home-page
+.text-right{
+    margin-bottom: 50px;
+}
+
+.own-container {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.cocktails {
+    width: 50%;
+    padding: 5% 15%;
+    margin-left: 3%;
+    position: relative;
+}
+
+.cocktails-add{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.main{
+    background-image: url('https://media.istockphoto.com/photos/wood-table-for-display-with-light-blur-night-bar-background-picture-id640333694?k=6&m=640333694&s=170667a&w=0&h=F8Jvt53CRRm3bExZdCNxn2JwKE_DU8vCAIGrrcnfhzs=');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.fa-plus-circle{
+    font-size: 40px;
+}

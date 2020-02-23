@@ -1,6 +1,8 @@
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
+    @cocktail = Cocktail.new
+    @clicked_cocktail
   end
 
   def show
@@ -14,16 +16,16 @@ class CocktailsController < ApplicationController
   def create
     @cocktail = Cocktail.new(unlock_params)
     if @cocktail.save
-      redirect_to cocktail_url(@cocktail[:id])
+      redirect_to cocktails_url
     else
-      render('new')
+      redirect_to cocktails_url
     end
   end
 
   private
   
   def unlock_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :img_url, :desc)
   end
 
 end
